@@ -26,33 +26,23 @@ import random
 # Server API URLs
 QUERY = "http://localhost:8080/query?id={}"
 
-# 500k server request
-N = 100
-
-prev_bid_price = 0
-prev_ask_price = 0
+# 500 server request
+N = 500
 
 def getDataPoint(quote):
 	""" Produce all of the needed values to generate a datapoint """
 	""" ------------- Update this function ------------- """
-	global prev_bid_price
-	global prev_ask_price
 	stock = quote['stock']
-	bid_price = 0
-	bid_price_avg = 0
-	ask_price = 0
-	ask_price_avg = 0
+	bid_price = float(quote['top_bid']['price'])
+	ask_price = float(quote['top_ask']['price'])
+	price = bid_price
+	return stock, bid_price, ask_price, price
 
-	if quote['top_bid']:
-		bid_price = float(quote['top_bid']['price'])
-		bid_price_avg = (bid_price + prev_bid_price)/ 2
-		prev_bid_price = bid_price
-
-	if quote['top_ask']:
-		ask_price = float(quote['top_ask']['price'])
-		ask_price_avg = (ask_price + prev_ask_price)/ 2
-		prev_ask_price = ask_price
-	return stock, bid_price, bid_price_avg, ask_price, ask_price_avg
+def getRatio(price_a, price_b):
+	""" Get ratio of price_a and price_b """
+	""" ------------- Update this function ------------- """
+	""" Also create some unit tests for this function in client_test.py """
+	return 1
 
 # Main
 if __name__ == "__main__":
@@ -61,6 +51,9 @@ if __name__ == "__main__":
 	for _ in xrange(N):
 		quotes = json.loads(urllib2.urlopen(QUERY.format(random.random())).read())
 
+		""" ----------- Update to get the ratio --------------- """
 		for quote in quotes:
-			stock, bid_price, bid_price_avg, ask_price, ask_price_avg = getDataPoint(quote)
-			print "Quoted %s at (bid:%s, avg bid:%s, ask:%s, avg ask:%s)" % (stock, bid_price, bid_price_avg, ask_price, ask_price_avg)
+			stock, bid_price, ask_price, price = getDataPoint(quote)
+			print "Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price)
+
+		print "Ratio %s" % getRatio(price, price)
