@@ -9,9 +9,8 @@ To start the example client:
 
 	python client.py
 
-To reset the sample data:
-
-	rm test.csv
+To unit test the example client:
+	python client_test.py
 
 API Examples
 ============
