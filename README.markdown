@@ -1,5 +1,14 @@
-<a href="https://www.insidesherpa.com">
-<img style="width:50%;height:auto;" src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/icons/promo_files/med_insidesherpa_grey_circle_logo.png"></a>
+<a href="https://www.insidesherpa.com" target="_blank">
+<img style="width:auto;height:100px;" src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/icons/promo_files/med_insidesherpa_grey_circle_logo.png"></a>
+
+<p align="center"> 
+	<b><a href="https://www.insidesherpa.com/virtual-internships/prototype/R5iK7HMxJGBgaSbvk/Technology%20Virtual%20Experience">Link to Program</a></b>
+	| 
+	<b><a href="#task">Task Overview</a></b>
+	|
+	<b><a href="#installation">Installation Instructions</a></b>
+</p> 
+
 
 <h1>Installation</h1>
 
