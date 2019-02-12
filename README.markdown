@@ -30,8 +30,6 @@
 	
 </ol>
 
-<br>
-
 <h2 id="installation" >Installation</h2>
 
 Please ensure you are using <b> python2.7. </b>
