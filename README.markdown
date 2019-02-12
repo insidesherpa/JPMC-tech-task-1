@@ -9,9 +9,15 @@
 	<b><a href="#task">Task Overview</a></b>
 	|
 	<b><a href="#installation">Installation Instructions</a></b>
-</p> 
+</p>
 
-<br><br>
+
+<h1> Experience Technology at Bank&MergeCo. </h1> 
+<h2> Module 1</h2>
+Interface with a stock price data feed
+Interface with a stock price data feed and set up your system for analysis of the data
+
+<br>
 
 <h1 id="task"> Task Overview </h1>
 
@@ -28,6 +34,8 @@
 <br>
 
 <h1 id="installation" >Installation</h1>
+
+please start the data feed server by running
 
 python datafeed/server.py
 
