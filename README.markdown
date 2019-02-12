@@ -1,3 +1,4 @@
+<br>
 <p align="center">
 <a href="https://www.insidesherpa.com/virtual-internships/prototype/R5iK7HMxJGBgaSbvk/Technology%20Virtual%20Experience" target="_blank">
 <img src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/icons/promo_files/Screen+Shot+2019-02-11+at+11.32.13+pm.png"></a>
@@ -11,7 +12,7 @@
 	<b><a href="https://www.insidesherpa.com/modules/R5iK7HMxJGBgaSbvk/gtAhtcvke9AFCzqME" target="_blank">Link to Module 1</a></b>
 	
 </p>
-
+<br>
 
 <h1> Experience Technology at Bank&MergeCo. </h1> 
 <p>Try out what real work is like in the technology team at Bank & Merge Co. Fast track to the tech team with your work.</p>
@@ -34,22 +35,26 @@
 
 <h2 id="installation" >Installation</h2>
 
-please start the data feed server by running
+Before you start, please make sure you are using <b> python2.7. </b>
 
-python datafeed/server.py
+Start the data feed server by running:
+
+<code> python datafeed/server.py</code>
 
 Before you can start this application, you have to run
 
-npm install
+<code>npm install</code>
+
 In the project directory, you can run:
 
-npm start
-Runs the app in the development mode.
+<code>npm start</code>
+
+This runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
 The page will reload if you make edits.
 
-Run
+<h2>Run</h2>
 ===
 To start the server (this will create random market called 'test.csv' in your
 working directory if one does not already exist):
@@ -63,7 +68,7 @@ To start the example client:
 To unit test the example client:
 	python client_test.py
 
-API Examples
+<h2>API Examples</h2>
 ============
 See also [client.py](https://github.com/texodus/exchange_simulator/blob/master/client.py)
 
