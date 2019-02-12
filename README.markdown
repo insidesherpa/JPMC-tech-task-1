@@ -1,3 +1,17 @@
+<b>Installation</b>
+
+python datafeed/server.py
+Before you can start this application, you have to run
+
+npm install
+In the project directory, you can run:
+
+npm start
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+
+The page will reload if you make edits.
+
 Run
 ===
 To start the server (this will create random market called 'test.csv' in your
