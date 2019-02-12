@@ -35,24 +35,17 @@
 
 <h2 id="installation" >Installation</h2>
 
-Before you start, please make sure you are using <b> python2.7. </b>
+Please ensure you are using <b> python2.7. </b>
 
 Start the data feed server by running:
 
 <code> python datafeed/server.py</code>
 
-Before you can start this application, you have to run
+Run <code>npm install</code> to start the application.
 
-<code>npm install</code>
+To run the app in development mode, run <code>npm start</code> in the project directory.
 
-In the project directory, you can run:
-
-<code>npm start</code>
-
-This runs the app in the development mode.
-Open http://localhost:3000 to view it in the browser.
-
-The page will reload if you make edits.
+Open http://localhost:3000 to view the app in the browser. The page will reload if you make edits.
 
 <h2>Run</h2>
 ===
