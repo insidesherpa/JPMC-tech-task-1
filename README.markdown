@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://www.insidesherpa.com" target="_blank">
-<img height="100px" align="center" src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/icons/promo_files/med_insidesherpa_grey_circle_logo.png"></a>
+<img src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/icons/promo_files/Screen+Shot+2019-02-11+at+11.28.35+pm.png"></a>
 </p>
 
 <p align="center"> 
