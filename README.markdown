@@ -1,4 +1,4 @@
-<b>Installation</b>
+<h1>Installation</h1>
 
 python datafeed/server.py
 Before you can start this application, you have to run
