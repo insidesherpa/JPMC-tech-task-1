@@ -1,6 +1,10 @@
+
+<img src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/icons/promo_files/med_insidesherpa_grey_circle_logo.png">
+
 <h1>Installation</h1>
 
 python datafeed/server.py
+
 Before you can start this application, you have to run
 
 npm install
