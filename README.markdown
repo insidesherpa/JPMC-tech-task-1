@@ -4,11 +4,12 @@
 </p>
 
 <p align="center"> 
-	<b><a href="https://www.insidesherpa.com/modules/R5iK7HMxJGBgaSbvk/gtAhtcvke9AFCzqME" target="_blank">Module 1</a></b>
-	| 
 	<b><a href="#task">Task Overview</a></b>
 	|
 	<b><a href="#installation">Installation Instructions</a></b>
+	| 
+	<b><a href="https://www.insidesherpa.com/modules/R5iK7HMxJGBgaSbvk/gtAhtcvke9AFCzqME" target="_blank">Link to Module 1</a></b>
+	
 </p>
 
 
