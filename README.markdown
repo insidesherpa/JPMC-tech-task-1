@@ -4,7 +4,7 @@
 </p>
 
 <p align="center"> 
-	<b><a href="https://www.insidesherpa.com/virtual-internships/prototype/R5iK7HMxJGBgaSbvk/Technology%20Virtual%20Experience" target="_blank">Link to Program</a></b>
+	<b><a href="https://www.insidesherpa.com/modules/R5iK7HMxJGBgaSbvk/gtAhtcvke9AFCzqME" target="_blank">Link to Program</a></b>
 	| 
 	<b><a href="#task">Task Overview</a></b>
 	|
@@ -12,7 +12,11 @@
 </p> 
 
 
-<h1 id="task> Task Overview </h1>
+<h1 id="task"> Task Overview </h1>
+
+<ol>
+	<li>Please clone the feed adjustment repo to start this task:</li>	
+</ol>
 
 <h1 id="installation" >Installation</h1>
 
