@@ -1,6 +1,6 @@
 <br>
 <p align="center">
-<a [go](http://stackoverflow.com){:target="_blank" rel="noopener"}>
+<a href="[go](http://stackoverflow.com){:target="_blank" rel="noopener"}">
 <img src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/icons/promo_files/Screen+Shot+2019-02-11+at+11.32.13+pm.png"></a>
 </p>
 
