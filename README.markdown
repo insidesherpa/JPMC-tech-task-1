@@ -1,6 +1,6 @@
 <br>
 <p align="center">
-<a href="https://www.insidesherpa.com/virtual-internships/prototype/R5iK7HMxJGBgaSbvk/Technology%20Virtual%20Experience" target="_blank">
+<a [go](https://www.insidesherpa.com/virtual-internships/prototype/R5iK7HMxJGBgaSbvk/Technology%20Virtual%20Experience){:target="_blank" rel="noopener"}>
 <img src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/icons/promo_files/Screen+Shot+2019-02-11+at+11.32.13+pm.png"></a>
 </p>
 
@@ -10,6 +10,8 @@
 	<b><a href="#installation">Installation Instructions</a></b>
 	| 
 	<b><a href="https://www.insidesherpa.com/modules/R5iK7HMxJGBgaSbvk/gtAhtcvke9AFCzqME" target="_blank">Link to Module 1</a></b>	
+	| 
+	<b><a href="https://www.insidesherpa.com/virtual-internships/prototype/R5iK7HMxJGBgaSbvk/Technology%20Virtual%20Experience" target="_blank">Link to Program </a></b>	
 </p>
 
 <h1> Introduction</h1> 
