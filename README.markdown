@@ -47,16 +47,17 @@ To run the app in development mode, run <code>npm start</code> in the project di
 Open http://localhost:3000 to view the app in the browser. The page will reload if you make edits.
 
 <h2>Run</h2>
-To start the server (this will create random market called 'test.csv' in your
-working directory if one does not already exist):
+To start the server, run
 
 	python server.py
 
-To start the example client:
+this will create random market called 'test.csv' in your working directory if one does not already exist.
+
+To start the example client, run:
 
 	python client.py
 
-To unit test the example client:
+To unit test the example client, run:
 	python client_test.py
 
 <h2>API Examples</h2>
