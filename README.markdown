@@ -15,9 +15,9 @@
 </p>
 <br>
 
-<h1> Experience Technology at Bank&MergeCo. </h1> 
+<h1> Introduction</h1> 
+<b> Experience Technology at Bank&MergeCo. </b>
 <p>Try out what real work is like in the technology team at Bank & Merge Co. Fast track to the tech team with your work.</p>
-
 <br>
 
 <h2 id="task"> Module 1 Task Overview </h2>
