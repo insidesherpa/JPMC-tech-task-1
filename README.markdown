@@ -11,18 +11,21 @@
 	<b><a href="#installation">Installation Instructions</a></b>
 </p> 
 
+<br><br>
 
 <h1 id="task"> Task Overview </h1>
 
 <p> We want to process the data feed of stock A and stock B’s price to enable us to analyse when trading for the stock should occur.</p>
 
-<ul>
+<ol>
 	<li>Please clone this repository to start the task</li>
 	<li>Adjust the getRatio and getDataPoint functions</li>
 	<li>Pass all unit tests and add more to cover edge cases</li>
 	<li>Upload a git patch file as the submission to this task</li>
 	
-</ul>
+</ol>
+
+<br>
 
 <h1 id="installation" >Installation</h1>
 
