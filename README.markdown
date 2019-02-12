@@ -4,6 +4,7 @@
 <img src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/icons/promo_files/Screen+Shot+2019-02-11+at+11.32.13+pm.png"></a>
 </p>
 
+<br>
 <p align="center"> 
 	<b><a href="#task">Task Overview</a></b>
 	|
@@ -48,7 +49,6 @@ To run the app in development mode, run <code>npm start</code> in the project di
 Open http://localhost:3000 to view the app in the browser. The page will reload if you make edits.
 
 <h2>Run</h2>
-===
 To start the server (this will create random market called 'test.csv' in your
 working directory if one does not already exist):
 
@@ -62,7 +62,7 @@ To unit test the example client:
 	python client_test.py
 
 <h2>API Examples</h2>
-============
+
 See also [client.py](https://github.com/texodus/exchange_simulator/blob/master/client.py)
 
 Query:
