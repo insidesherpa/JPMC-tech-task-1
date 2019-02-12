@@ -11,7 +11,6 @@
 	| 
 	<b><a href="https://www.insidesherpa.com/modules/R5iK7HMxJGBgaSbvk/gtAhtcvke9AFCzqME" target="_blank">Link to Module 1</a></b>	
 </p>
-<br>
 
 <h1> Introduction</h1> 
 <b> Experience Technology at Bank&MergeCo. </b>
