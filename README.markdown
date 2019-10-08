@@ -36,7 +36,7 @@ Please ensure you are using <b> python2.7. </b>
 
 Start the data feed server by running:
 
-<code> python datafeed/server.py</code>
+<code> python server.py</code>
 
 Run <code>npm install</code> to start the application.
 
