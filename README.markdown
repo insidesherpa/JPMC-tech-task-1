@@ -38,18 +38,16 @@ Start the data feed server by running:
 
 <code> python server.py</code>
 
-Run <code>npm install</code> to start the application.
-
-To run the app in development mode, run <code>npm start</code> in the project directory.
-
-Open http://localhost:3000 to view the app in the browser. The page will reload if you make edits.
-
 <h2>Run</h2>
 To start the server, run
 
 	python server.py
 
 this will create random market called 'test.csv' in your working directory if one does not already exist.
+
+If you encounter an issue with `datautil.parser`, run this command: 
+
+	pip install python-dateutil
 
 To start the example client, run:
 
