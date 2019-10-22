@@ -269,10 +269,16 @@ class App(object):
     @route('/query')
     def handle_query(self, x):
         """ Takes no arguments, and yields the current top of the book;  the
-            best bid and ask and their sizes.
+            best bid and ask and their sizes
         """
-        t1, bids1, asks1 = self._current_book_1.next()
-        t2, bids2, asks2 = self._current_book_2.next()
+        try:
+            t1, bids1, asks1 = self._current_book_1.next()
+            t2, bids2, asks2 = self._current_book_2.next()
+        except Exception as e:
+            print "error getting stocks...reinitalizing app"
+            self.__init__()
+            t1, bids1, asks1 = self._current_book_1.next()
+            t2, bids2, asks2 = self._current_book_2.next()
         t = t1 if t1 > t2 else t2
         print 'Query received @ t%s' % t
         return [{
