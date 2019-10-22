@@ -197,9 +197,7 @@ def get(req_handler, routes):
                 req_handler.send_header('Access-Control-Allow-Origin', '*')
                 req_handler.end_headers()
                 params = read_params(req_handler.path)
-                data = []
-                while(len(data) == 0):
-                    data = json.dumps(handler(routes, params)) + '\n'
+                data = json.dumps(handler(routes, params)) + '\n'
                 req_handler.wfile.write(data)
                 return
 
@@ -278,10 +276,9 @@ class App(object):
             t2, bids2, asks2 = self._current_book_2.next()
         except Exception as e:
             print "error getting stocks...reinitalizing app"
-            print e
-            print x
             self.__init__()
-            return []
+            t1, bids1, asks1 = self._current_book_1.next()
+            t2, bids2, asks2 = self._current_book_2.next()
         t = t1 if t1 > t2 else t2
         print 'Query received @ t%s' % t
         return [{
