@@ -197,7 +197,9 @@ def get(req_handler, routes):
                 req_handler.send_header('Access-Control-Allow-Origin', '*')
                 req_handler.end_headers()
                 params = read_params(req_handler.path)
-                data = json.dumps(handler(routes, params)) + '\n'
+                data = []
+                while(len(data) == 0):
+                    data = json.dumps(handler(routes, params)) + '\n'
                 req_handler.wfile.write(data)
                 return
 
@@ -269,10 +271,19 @@ class App(object):
     @route('/query')
     def handle_query(self, x):
         """ Takes no arguments, and yields the current top of the book;  the
-            best bid and ask and their sizes.
+            best bid and ask and their sizes.json.dumps(handler(routes, params)) + '\n'
         """
-        t1, bids1, asks1 = self._current_book_1.next()
-        t2, bids2, asks2 = self._current_book_2.next()
+        try:
+            t1, bids1, asks1 = self._current_book_1.next()
+            t2, bids2, asks2 = self._current_book_2.next()
+        except Exception as e:
+            print "error getting stocks...please retry..."
+            print e
+            print x
+            print self._current_book_1
+            print self._current_book_2
+            self.__init__()
+            return []
         t = t1 if t1 > t2 else t2
         print 'Query received @ t%s' % t
         return [{
