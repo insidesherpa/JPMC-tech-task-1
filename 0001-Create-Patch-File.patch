@@ -1,0 +1,89 @@
+From 56109179db851c6fa3ef1c294341a57d508ece77 Mon Sep 17 00:00:00 2001
+From: Stefanos <stefanosu422@gmail.com>
+Date: Fri, 27 Dec 2019 20:19:00 -0500
+Subject: [PATCH] Create Patch File
+
+---
+ client.py      |   9 +++++++--
+ client.pyc     | Bin 0 -> 1392 bytes
+ client_test.py |   1 -
+ 3 files changed, 7 insertions(+), 3 deletions(-)
+ create mode 100644 client.pyc
+
+diff --git a/client.py b/client.py
+index 40badcd..dccf503 100644
+--- a/client.py
++++ b/client.py
+@@ -35,25 +35,30 @@ def getDataPoint(quote):
+ 	stock = quote['stock']
+ 	bid_price = float(quote['top_bid']['price'])
+ 	ask_price = float(quote['top_ask']['price'])
+-	price = bid_price
++	price = (bid_price + ask_price)/2
+ 	return stock, bid_price, ask_price, price
+ 
+ def getRatio(price_a, price_b):
+ 	""" Get ratio of price_a and price_b """
+ 	""" ------------- Update this function ------------- """
+ 	""" Also create some unit tests for this function in client_test.py """
+-	return 1
++	if (price_b == 0): 
++			return 
++	return price_a/price_b
+ 
+ # Main
+ if __name__ == "__main__":
+ 
++
+ 	# Query the price once every N seconds.
+ 	for _ in xrange(N):
+ 		quotes = json.loads(urllib2.urlopen(QUERY.format(random.random())).read())
+ 
+ 		""" ----------- Update to get the ratio --------------- """
++		prices = {}
+ 		for quote in quotes:
+ 			stock, bid_price, ask_price, price = getDataPoint(quote)
++			prices[stock] = price 
+ 			print "Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price)
+ 
+ 		print "Ratio %s" % getRatio(price, price)
+diff --git a/client.pyc b/client.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..8efcb6bb754818c9c6e495a64e54747d95468a93
+GIT binary patch
+literal 1392
+zcmb_bO>fgc5S_K1v`y0w`T_KSv>;Wu5+T3|RTPkD1wx`Ksj3PKupIBCb?SIi@1`mu
+zJ(YjJUqIr*zk@r>Y!X16alGr<w=-{NW?%g8bF~}as_#=6KU4I5O2bqHfTCAG4iNpe
+z1w>+kdk}dO+lR;pMMwaO><Xv=K2cy5RK*!nfYYF=aN<EJ#Q7J%8Ndo$3fO-48KN4X
+z2i;jffNmWyfbJZi4_zNFft~2>&X4VA0WzXqg!3K11&ZH-=n7yJ@Cy6A4Io;AXc?jv
+zh*kmVT?AZ$M~ZS-0$c`MVYCy#)#ooxzrvxK2Bbabd+9m!2o4KZ{eCz@?Z|%8vukdW
+zd2DTev)Rmbn&ijY*v*Ic9^Px74zT?2BvV@-FR~xhx|9Y~XaqE#(J*^74ISm$g#bHR
+zc(6w8TBEElya^Wk!F(8cF!bRXHF5PKfT0)z!+_J@539_)Nt4_wwHl--lRTHYBkeKD
+z0#TuoXGuOlBdwN4SYVl0a*`^sNndA$m6o$KR;MSHFW>5Z+|HCk`(>8mZ!|F{nMWQW
+zm*)06xlU}z@osrK&=y;?0?R!kmUzU#D~cYiT8@LgLY@par+HwoG)-f%lN8zvj@p@R
+zZlgJ&Z0LK2x$gI{u+5iyubwq5rpFCSgpK>nG|vdX+y7we#B+ppn+n@=g)w=JCh%)w
+zg?{rQ<)bIVUCMO=sHvoK*5x8Ac%Lqbpw<1*r%iK<Cixt#q{d~MTkC3y6PXlhY_}!p
+z5n$I96!HPCX=BH~?Doimo&Q_i(?mvfw>Z5GCT2}QP#1x)ycfs4BrD?B+@{5Az9J>p
+zjZCZz>4rAf%^gXtbYGV+SsR7}9V5AhS83sj7?gRQwI5j4w9R_xjIPmz<uglai0(Nh
+zygt}zy|Jv5-Ik-8<%m%>Mbg7Kb`j?kLaDP~?BYmI%1n;ZeY#mD?&z|YSa(>7iE^0J
+znsKJf+O$}PPJAtnX|b07ky=R5|Lyyu9{uTZe7wrUlBT+FKfmf%y%~Dy!Ln%hRWT>7
+Ji<(&TegUqPFxLP8
+
+literal 0
+HcmV?d00001
+
+diff --git a/client_test.py b/client_test.py
+index a608a01..b2a9da8 100644
+--- a/client_test.py
++++ b/client_test.py
+@@ -16,7 +16,6 @@ class ClientTest(unittest.TestCase):
+     ]
+     """ ------------ Add the assertion below ------------ """
+ 
+-
+   """ ------------ Add more unit tests ------------ """
+ 
+ 
+-- 
+2.19.0
+
