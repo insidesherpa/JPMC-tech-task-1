@@ -1,0 +1,110 @@
+From a96caa719f2d23db336e88a294aaa30bea419cb1 Mon Sep 17 00:00:00 2001
+From: ashwinijha6 <ashwinijha006@gmail.com>
+Date: Thu, 14 May 2020 21:34:55 +0530
+Subject: [PATCH] Create Patch File
+
+---
+ client.py      |  11 ++++++++---
+ client.pyc     | Bin 0 -> 1347 bytes
+ client_test.py |  17 +++++++++++------
+ 3 files changed, 19 insertions(+), 9 deletions(-)
+ create mode 100644 client.pyc
+
+diff --git a/client.py b/client.py
+index 40badcd..00cb947 100644
+--- a/client.py
++++ b/client.py
+@@ -35,14 +35,17 @@ def getDataPoint(quote):
+ 	stock = quote['stock']
+ 	bid_price = float(quote['top_bid']['price'])
+ 	ask_price = float(quote['top_ask']['price'])
+-	price = bid_price
++	price = (bid_price+ask_price)/2
+ 	return stock, bid_price, ask_price, price
+ 
+ def getRatio(price_a, price_b):
+ 	""" Get ratio of price_a and price_b """
+ 	""" ------------- Update this function ------------- """
+ 	""" Also create some unit tests for this function in client_test.py """
+-	return 1
++	if (price_b==0):
++	#when price_b is 0 avoid throwing ZeroDivisionError
++	         return 
++	return price_a/price_b
+ 
+ # Main
+ if __name__ == "__main__":
+@@ -52,8 +55,10 @@ if __name__ == "__main__":
+ 		quotes = json.loads(urllib2.urlopen(QUERY.format(random.random())).read())
+ 
+ 		""" ----------- Update to get the ratio --------------- """
++		prices={}
+ 		for quote in quotes:
+ 			stock, bid_price, ask_price, price = getDataPoint(quote)
++			prices[stock] = price
+ 			print "Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price)
+ 
+-		print "Ratio %s" % getRatio(price, price)
++		print "Ratio %s" % getRatio(prices['ABC'], prices['DEF'])
+diff --git a/client.pyc b/client.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..04aa4c60e9b7239287c84313d44f77041dcc44bb
+GIT binary patch
+literal 1347
+zcmbVLZEqVz5Pt3@ZtOa3nwL_4TaYTQQiBU0P!+Z1B?(1HM5&{y>Zx$r+)m<i&Ueo3
+zx}?JS6vUt42OuQ=0Y3}A!_3Amh;MLrGdnXoGduI_T=e@&=f_`u`!>h?xyI|KOm-yz
+z41WPiAbl$bNP~qvL>eyS2x$bvmKcWRC72jLa9|5&$qUy&%P=jRhG^Qs`LCchXbG1A
+zcE9-vX$KTybR7hYx}X@N6;OmxgiDAMf1?|7IlYO3Q?KHD4|J2`A0xd5YJqNv->Vqu
+z8q#&78%Q@n{H=o4@W^ltYoK+|hFFhd+<yAy+0S@kmO;F?3e!eUmJWKCq2E2hi^`*L
+zm|SOAia+_;x9_qzbZ)ZU@0WG1%VBNZ_QMAcAN0?r)V%qmFps~#DE?pwb0#b?#Y{U)
+z_JG;Ur|ew>a92u*9>dn->Mz2DE&kgUVHRQ*;T;BZ^CHG9m>XuXv~ifUB=a^ib<osi
+znv>FHsp@0phNLPYLq@&U<&>;)wK}1S8tvFg8SV6>E-I&-RB2tEpE?-=S5LB|!g%YX
+zDRO#i)%LUq*&~tG{QhxSYnMp8SI?%kqXBDhZDyP$yUHLMM_*|JpF_M7VfH?={;(cX
+zU)$k#MOAz}8tVR62Vd`OIm(Ayjw81|?B``cmHS}w#&tR1gxoH7aNs+TEFETuI>83N
+zH-cQwSdd5m4jULf9%~syzUmN%d>d@qJWL|qwC^!fPsu4psHg=)Uwo#OuFPCMQapgb
+zzOOuy13Wr&$A8F2S03X0-y2-!C~j~db=;E-a?6OjVH`Nw%d)X9sw}hbv+_(pH|nlc
+z+Np#w-@a?_E5^*PzA~2XSqbzR+0{wIpMAdL*WJA@lH08N>ZeUv7DpdBnOawj$qOS}
+zS59hZ7>Ro9@A}#Ey}?T-ldwPVspT)3S6AsVWtopS=MZj1{4yWM6JzY+sCvRzDv6Kl
+zW~`k*tRZc@%}<l{qVK{EWYGM04J2kD)B3MrO4#&20e>{+|EHuUo035>>jwUfT2U)(
+Vx7(d=v>t3ltzad%6Lf-J_!ovI8H4};
+
+literal 0
+HcmV?d00001
+
+diff --git a/client_test.py b/client_test.py
+index a608a01..ba10639 100644
+--- a/client_test.py
++++ b/client_test.py
+@@ -8,18 +8,23 @@ class ClientTest(unittest.TestCase):
+       {'top_ask': {'price': 121.68, 'size': 4}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 117.87, 'size': 81}, 'id': '0.109974697771', 'stock': 'DEF'}
+     ]
+     """ ------------ Add the assertion below ------------ """
+-
+-  def test_getDataPoint_calculatePriceBidGreaterThanAsk(self):
+-    quotes = [
++    for quote in quotes:
++     self.assertEqual(getDataPoint(quote), (quote['stock'], quote['top_bid']['price'], quote['top_ask']['price'], (quote['top_bid']['price']+quote['top_ask']['price'])/2))
++   
++    def test_getDataPoint_calculatePriceBidGreaterThanAsk(self):
++      quotes = [
+       {'top_ask': {'price': 119.2, 'size': 36}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 120.48, 'size': 109}, 'id': '0.109974697771', 'stock': 'ABC'},
+       {'top_ask': {'price': 121.68, 'size': 4}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 117.87, 'size': 81}, 'id': '0.109974697771', 'stock': 'DEF'}
+     ]
+     """ ------------ Add the assertion below ------------ """
+-
++    for quote in quotes:
++     self.assertEqual(getDataPoint(quote), (quote['stock'], quote['top_bid']['price'], quote['top_ask']['price'], (quote['top_bid']['price']+quote['top_ask']['price'])/2))
+ 
+   """ ------------ Add more unit tests ------------ """
+-
+-
++def compute_the_ratio(self):
++  self.assertEqual(getRatio(price_a,price_b), 0)
++	#when price_a or price_b is 0 avoid throwing ZeroDivisionError
++  return 1
+ 
+ if __name__ == '__main__':
+     unittest.main()
+-- 
+2.26.2
+
